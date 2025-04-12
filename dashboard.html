@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/dashboard.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -17,36 +17,48 @@
         </button>
       </div>
       <ul class="nav-links" id="navLinks">
-        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="page2.html"><i class="fas fa-clone"></i> Page 2</a></li>
+        <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#" class="nav-link" data-page="cards"><i class="fas fa-clone"></i> Page 2</a></li>
         <li><button id="darkToggle" class="icon-btn"><i class="fas fa-moon"></i></button></li>
         <li><span class="user-avatar">JD</span></li>
-        <li><button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+        <li><button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
       </ul>
     </div>
   </nav>
 
-  <main class="dashboard-content fade-in">
-    <section class="hero">
-      <h1>👋 Welcome to Your Dashboard</h1>
-      <p>Use the menu to navigate between your tasks and cards.</p>
+  <main class="dashboard-content">
+    <!-- Home Page Content (Todo List) -->
+    <section class="page-content" id="home-page">
+      <div class="todo-container">
+        <h1 class="page-title">My Todo List</h1>
+        <div class="todo-form">
+          <input type="text" id="todo-input" placeholder="Add a new task...">
+          <button id="add-todo"><i class="fas fa-plus"></i> Add</button>
+        </div>
+        <ul class="todo-list" id="todo-list"></ul>
+      </div>
+    </section>
+
+    <!-- Page 2 Content (Cards) -->
+    <section class="page-content hidden" id="cards-page">
+      <h1 class="page-title">Responsive Cards</h1>
+      <div class="cards-container">
+        <div class="card">
+          <h3>Card 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="card">
+          <h3>Card 2</h3>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="card">
+          <h3>Card 3</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script>
-    document.getElementById('menuToggle')?.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('active');
-    });
-
-    document.getElementById('darkToggle')?.addEventListener('click', () => {
-      const html = document.documentElement;
-      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-    });
-
-    function logout() {
-      alert("Logging out...");
-      window.location.href = "index.html";
-    }
-  </script>
+  <script src="scripts/dashboard.js"></script>
 </body>
 </html>
