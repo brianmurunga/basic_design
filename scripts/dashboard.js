@@ -17,6 +17,7 @@ let editTodoId = null;
 
 // Initialize the dashboard
 function initDashboard() {
+  initTheme();
   setupEventListeners();
   switchPage('home');
 }
@@ -25,9 +26,6 @@ function initDashboard() {
 function setupEventListeners() {
   // Menu toggle
   menuToggle?.addEventListener('click', toggleMenu);
-  
-  // Dark mode toggle
-  darkToggle?.addEventListener('click', toggleDarkMode);
   
   // Navigation links
   navLinksAll.forEach(link => {
@@ -43,22 +41,43 @@ function setupEventListeners() {
     if (e.key === 'Enter') addTodo();
   });
   
-  // Logout button
-  logoutBtn?.addEventListener('click', logout);
+    // Logout button
+    logoutBtn?.addEventListener('click', logout);
+    
+  // Dark mode toggle
+  darkToggle?.addEventListener('click', toggleDarkMode);
 }
 
-// Toggle mobile menu
-function toggleMenu() {
-  navLinks.classList.toggle('active');
+// Initialize theme from localStorage
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.dataset.theme = savedTheme;
+  updateThemeButton(savedTheme);
 }
 
 // Toggle dark mode
 function toggleDarkMode() {
   const html = document.documentElement;
-  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-  darkToggle.innerHTML = html.dataset.theme === 'dark' 
-    ? '<i class="fas fa-sun"></i>' 
-    : '<i class="fas fa-moon"></i>';
+  const isDark = html.dataset.theme === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  
+  html.dataset.theme = newTheme;
+  localStorage.setItem('theme', newTheme);
+  updateThemeButton(newTheme);
+}
+
+// Update theme toggle button
+function updateThemeButton(theme) {
+  if (!darkToggle) return;
+  
+  darkToggle.innerHTML = theme === 'dark'
+    ? '<i class="fas fa-sun"></i> Light'
+    : '<i class="fas fa-moon"></i> Dark';
+}
+
+// Toggle mobile menu
+function toggleMenu() {
+  navLinks.classList.toggle('active');
 }
 
 // Switch between pages
@@ -142,12 +161,10 @@ function renderTodos() {
     todoList.appendChild(todoItem);
   });
 }
-
 // Logout function
 function logout() {
-  alert("Logging out...");
-  window.location.href = "index.html";
-}
-
+    alert("Logging out...");
+    window.location.href = "index.html";
+  }
 // Initialize the dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', initDashboard);
