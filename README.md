@@ -1,5 +1,5 @@
 
-# 🌐 Web Development Project Submission
+# 🌐 Web Development 
 
 This is a simple responsive weekend web project.It demonstrates form validation, dynamic UI interactions, and responsive design principles using HTML, CSS, and JavaScript.
 
@@ -93,7 +93,8 @@ open index.html
 
 ## 📸 Preview
 
-<img src="screenshots/login.png" width="300"/> <img src="screenshots/desktop.png" width="300"/> <img src="screenshots/cards.png" width="300"/>
+<img src="screenshots/login.png" width="300"/> <img src="screenshots/desktop.png" width="300"/> <br>
+<img src="screenshots/cards.png" width="300"/>
 
 ---
 
@@ -101,7 +102,7 @@ open index.html
 
 **[BMW]**  
 🧑‍💻 Curious about UI/UX & clean frontend development  
-📧 Email: your.email@example.com  
+ 
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/brian-murunga-a0467a263/)  
 🔗 [GitHub](https://github.com/brianmurunga)
 
