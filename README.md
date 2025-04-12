@@ -93,8 +93,9 @@ open index.html
 
 ## 📸 Preview
 
-<img src="screenshots/login.png" width="300"/> <img src="screenshots/desktop.png" width="300"/> <br>
+<img src="screenshots/login.png" width="300"/> 
 <img src="screenshots/cards.png" width="300"/>
+<img src="screenshots/desktop.png" width="300"/> 
 
 ---
 
