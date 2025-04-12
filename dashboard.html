@@ -11,14 +11,14 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-left">
-        <h2 class="nav-brand">🚀 Todo APP</h2>
+        <h2 class="nav-brand">Todo APP</h2>
         <button class="menu-toggle" id="menuToggle">
           <i class="fas fa-bars"></i>
         </button>
       </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#" class="nav-link" data-page="cards"><i class="fas fa-clone"></i> Page 2</a></li>
+        <li><a href="#" class="nav-link" data-page="cards"><i class="fas fa-clone"></i> Cards</a></li>
         <li><button id="darkToggle" class="icon-btn"><i class="fas fa-moon"></i></button></li>
         <li><span class="user-avatar">JD</span></li>
         <li><button class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
@@ -41,23 +41,114 @@
 
     <!-- Page 2 Content (Cards) -->
     <section class="page-content hidden" id="cards-page">
-      <h1 class="page-title">Responsive Cards</h1>
+      <h1 class="page-title">Task Management Cards</h1>
       <div class="cards-container">
-        <div class="card">
-          <h3>Card 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <!-- Today's Tasks Card -->
+        <div class="task-card today-card">
+          <div class="card-header">
+            <h3><i class="fas fa-calendar-day"></i> Today's Tasks</h3>
+            </div>
+          <div class="card-image-placeholder">
+            <img src="icons/goals.png" alt="Today's Tasks">
+          </div>
+          <ul class="task-list">
+           
+            <li><span class="task-signal in-progress">↻</span> Project deadline</li>
+            <li><span class="task-signal">○</span> Grocery shopping</li>
+          </ul>
+          <div class="card-footer">Max: 10 tasks</div>
         </div>
-        <div class="card">
-          <h3>Card 2</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- Next Tasks Card -->
+        <div class="task-card next-card">
+          <div class="card-header">
+            <h3><i class="fas fa-forward"></i> Next Tasks</h3>
+            <span class="card-signal medium-priority">•</span>
+          </div>
+          <div class="card-image-placeholder">
+            <img src="icons/task-list.png" alt="Next Tasks">
+          </div>
+          <ul class="task-list">
+            <li><span class="task-signal">○</span> Dentist appointment</li>
+            <li><span class="task-signal">○</span> Team meeting prep</li>
+            <li><span class="task-signal delegated">→</span> Research project</li>
+          </ul>
+          <div class="card-footer">Important but not urgent</div>
         </div>
-        <div class="card">
-          <h3>Card 3</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        
+        <!-- Someday Tasks Card -->
+        <div class="task-card someday-card">
+          <div class="card-header">
+            <h3><i class="fas fa-cloud"></i> Someday</h3>
+          
+          </div>
+          <div class="card-image-placeholder">
+            <img src="icons/goals.png" alt="Someday Tasks">
+          </div>
+          <ul class="task-list">
+            <li><span class="task-signal">○</span> Learn Spanish</li>
+            <li><span class="task-signal">○</span> Road trip planning</li>
+            <li><span class="task-signal">○</span> Home renovation</li>
+          </ul>
+          <div class="card-footer">Dreams & aspirations</div>
         </div>
+        
+        <!-- Event Card -->
+        <div class="task-card event-card">
+          <div class="card-header">
+            <h3><i class="fas fa-calendar-check"></i> Team Meeting</h3>
+          
+          </div>
+          <div class="card-image-placeholder">
+            <img src="icons/to-do-list (1).png" alt="Team Meeting">
+          </div>
+          <div class="event-details">
+            <p><i class="fas fa-clock"></i> Tomorrow, 2:00 PM</p>
+            <p><i class="fas fa-map-marker-alt"></i> Conference Room B</p>
+            <p><i class="fas fa-clipboard-list"></i> Agenda: Q2 Planning</p>
+          </div>
+          <div class="card-footer">Linked to: Project X</div>
+        </div>
+        
+        <!-- Creative Task Card -->
+        <div class="task-card creative-card">
+          <div class="card-header">
+            <h3><i class="fas fa-palette"></i> Design Project</h3>
+            
+          </div>
+          <div class="card-image-placeholder">
+            <img src="icons/task-list.png" alt="Design Project">
+          </div>
+          <ul class="task-list">
+            <li><span class="task-signal in-progress">↻</span> Logo concepts</li>
+            <li><span class="task-signal">○</span> Color palette</li>
+            <li><span class="task-signal delegated">→</span> Client feedback</li>
+          </ul>
+          <div class="card-footer">Inspiration: Nature</div>
+        </div>
+        
+        <!-- Completed Tasks Card -->
+        <div class="task-card completed-card">
+          <div class="card-header">
+            <h3><i class="fas fa-check-circle"></i> Completed</h3>
+            
+          </div>
+          <div class="card-image-placeholder">
+            <img src="icons/goals.png" alt="Completed Tasks">
+          </div>
+          <ul class="task-list">
+            <li><span class="task-signal completed">✓</span> Submit report</li>
+            <li><span class="task-signal completed">✓</span> Pay bills</li>
+            <li><span class="task-signal completed">✓</span> Call mom</li>
+          </ul>
+          <div class="card-footer">3/10 tasks today</div>
+        </div>
+        
       </div>
     </section>
   </main>
+
   
 
   <script src="scripts/dashboard.js"></script>
